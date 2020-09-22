@@ -14,7 +14,6 @@ export default function Installment({ data }) {
 
     const formatedCapital = formatCurrency(capital);
     const formatedJuros = formatCurrency(juros);
-    // console.log(value);
 
     return (
         <div className="col s6 m3 l2">
