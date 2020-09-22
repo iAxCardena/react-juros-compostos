@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import Form from './components/Form/Form';
 import Installments from './components/Installments/Installments';
 import interestCalculation from './helpers/interestCalculation';
-// import { formatNumber } from './helpers/formatHelpers';
 
 export default function App() {
   const [initialMoney, setInitialMoney] = useState(1000);
@@ -11,19 +10,12 @@ export default function App() {
   const [parts, setParts] = useState([]);
 
   useEffect(() => {
-    // console.log("Effect1");
-
     if (initialMoney !== 0 && monthlyInterest !== 0) {
       const result = interestCalculation(initialMoney, monthlyInterest, period);
       setParts(Array.from(result));
     }
 
   }, [initialMoney, monthlyInterest, period]);
-
-  // useEffect(() => {
-  //   // console.log("Effect2");
-  //   // console.log(parts);
-  // }, [parts]);
 
   const handleMoneyChange = value => {
     setInitialMoney(value);
@@ -37,7 +29,6 @@ export default function App() {
     setPeriod(value);
   }
 
-  // console.log(parts);
   return (
     <div>
       <h1 className="center">React - Juros Compostos</h1>
